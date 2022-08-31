@@ -13,7 +13,6 @@ namespace Formulas_Generator.Menu.Controls.Builders
                 Name = enName,
                 Anchor = AnchorStyles.Right,
                 Value = 1,
-                Maximum = 100,
                 Minimum = 1,
                 
                 Font = new Font("Bodoni MT", 12),
