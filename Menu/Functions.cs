@@ -9,16 +9,6 @@ namespace Formulas_Generator.Menu
 {
     public static class Functions
     {
-        public static void chooseFolder(Control box)
-        {
-            var folderBrowserDialog1 = new FolderBrowserDialog();
-
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            {
-                box.Text = folderBrowserDialog1.SelectedPath + sep + fileName;
-            }
-        }
-
         public static async void writeLines(object path, Generator gen)
         {
             var lines = await gen.getLines();

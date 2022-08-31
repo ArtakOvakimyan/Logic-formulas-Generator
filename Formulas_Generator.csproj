@@ -59,6 +59,7 @@
         <Compile Include="Math\Structure\Implies.cs" />
         <Compile Include="Math\Structure\Not.cs" />
         <Compile Include="Math\Structure\Or.cs" />
+        <Compile Include="Math\Structure\Priority.cs" />
         <Compile Include="Math\Structure\Val.cs" />
         <Compile Include="Menu\Controls\Builders\ButtonCreator.cs" />
         <Compile Include="Menu\Controls\Builders\LabelCreator.cs" />

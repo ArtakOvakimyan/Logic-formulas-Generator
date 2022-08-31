@@ -19,14 +19,25 @@ namespace Formulas_Generator.Math.Structure
             get => 1 + v.Len;
             set{}
         }
+        
+        public override Priority Priority {
+            get => Priority.Not;
+            set { }
+        }
+        
+        public override string Operator
+        {
+            get => @"\neg";
+            set{} 
+        }
 
         public override string ToString()
         {
             if (v.GetType() == typeof(Val))
             {
-                return @"\neg" + v.ToString() + " ";
+                return this.Operator + v.ToString() + " ";
             }
-            return @"\neg" + "(" + v.ToString() + ")" + " ";
+            return this.Operator + "(" + v.ToString() + ")" + " ";
         }
     }
 }

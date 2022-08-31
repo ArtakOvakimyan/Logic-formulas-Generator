@@ -4,6 +4,11 @@ namespace Formulas_Generator.Math.Structure
     {
         private string value;
         
+        public Val(string value)
+        {
+            this.value = value;
+        }
+        
         public override int LastIndex { get; set; }
 
         public override int Len
@@ -11,12 +16,14 @@ namespace Formulas_Generator.Math.Structure
             get => 1;
             set{}
         }
-
-        public Val(string value)
-        {
-            this.value = value;
+        
+        public override Priority Priority {
+            get => Priority.Val;
+            set { }
         }
         
+        public override string Operator { get; set; }
+
         public override string ToString()
         {
             return " " + value + " ";

@@ -13,10 +13,7 @@ namespace Formulas_Generator.Math.Structure
         
         public override int LastIndex
         {
-            get
-            {
-                return System.Math.Max(v1.LastIndex, v2.LastIndex);
-            } 
+            get => System.Math.Max(v1.LastIndex, v2.LastIndex);
             set{}
         }
         public override int Len
@@ -24,10 +21,34 @@ namespace Formulas_Generator.Math.Structure
             get => 1 + v1.Len + v2.Len;
             set{}
         }
+        
+        public override Priority Priority {
+            get => Priority.Implies;
+            set { }
+        }
+        
+        public override string Operator
+        {
+            get => @"\rightarrow";
+            set{} 
+        }
 
         public override string ToString()
         {
-            return v1.ToString() + @"\rightarrow" + v2.ToString();
+            var v1Str = v1.ToString();
+            var v2Str = v2.ToString();
+
+            if (v1.Priority < this.Priority)
+            {
+                v1Str = "(" + v1Str + ")";
+            }
+            
+            if (v2.Priority < this.Priority)
+            {
+                v2Str = "(" + v2Str + ")";
+            }
+
+            return v1Str + this.Operator + v2Str;
         }
     }
 }

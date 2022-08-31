@@ -5,7 +5,7 @@ using static Formulas_Generator.Menu.Controls.Stores.ActionsStore;
 
 namespace Formulas_Generator.Menu.Controls.Stores
 {
-    public class StripItemsStore
+    public static class StripItemsStore
     {
         private static StripItemCreator creator = new StripItemCreator();
 

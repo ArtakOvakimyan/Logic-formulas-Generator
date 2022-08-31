@@ -3,7 +3,7 @@ using Formulas_Generator.Menu.Controls.Builders;
 
 namespace Formulas_Generator.Menu.Controls.Stores
 {
-    public class LabelsStore
+    public static class LabelsStore
     {
         private static LabelCreator creator = new LabelCreator();
 
