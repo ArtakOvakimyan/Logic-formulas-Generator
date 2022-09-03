@@ -1,9 +1,6 @@
-using System;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
 using Formulas_Generator.Math;
-using Formulas_Generator.SysSupplies;
 using static Formulas_Generator.SysSupplies.Constants;
 
 namespace Formulas_Generator.Menu

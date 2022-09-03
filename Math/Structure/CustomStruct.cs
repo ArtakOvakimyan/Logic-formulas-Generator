@@ -1,5 +1,3 @@
-using System;
-
 namespace Formulas_Generator.Math.Structure
 {
     public abstract class CustomStruct

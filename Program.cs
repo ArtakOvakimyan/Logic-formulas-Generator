@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using Formulas_Generator.Math.Structure;
 
 namespace Formulas_Generator
 {

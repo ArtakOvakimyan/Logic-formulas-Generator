@@ -60,9 +60,7 @@ namespace Formulas_Generator.Math.Structure
                     res += p1 + this.Operator + p2 + '\n';
                 }
             }
-
             return res;
-            /*return v1.ToString() + this.Operator + v2.ToString();*/
         }
     }
 }

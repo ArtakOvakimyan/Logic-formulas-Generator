@@ -60,23 +60,7 @@ namespace Formulas_Generator.Math.Structure
                     res += p1 + this.Operator + p2 + '\n';
                 }
             }
-
             return res;
-            
-            /*var v1Str = v1.ToString();
-            var v2Str = v2.ToString();
-
-            if (v1.Priority < this.Priority)
-            {
-                v1Str = "(" + v1Str + ")";
-            }
-            
-            if (v2.Priority < this.Priority)
-            {
-                v2Str = "(" + v2Str + ")";
-            }
-
-            return v1Str + this.Operator + v2Str;*/
         }
     }
 }

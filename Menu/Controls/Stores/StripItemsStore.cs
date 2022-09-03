@@ -1,6 +1,5 @@
 using System.Windows.Forms;
 using Formulas_Generator.Menu.Controls.Builders;
-using Formulas_Generator.SysSupplies;
 using static Formulas_Generator.Menu.Controls.Stores.ActionsStore;
 
 namespace Formulas_Generator.Menu.Controls.Stores

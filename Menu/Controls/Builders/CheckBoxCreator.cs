@@ -1,6 +1,5 @@
 using System.Drawing;
 using System.Windows.Forms;
-using Formulas_Generator.Math;
 using Formulas_Generator.SysSupplies;
 
 namespace Formulas_Generator.Menu.Controls.Builders
