@@ -24,11 +24,11 @@ namespace Formulas_Generator.Menu.Controls.Builders
                 FlatStyle = FlatStyle.Standard
             };
             LanguageManager.subscribe(button);
-            button.GotFocus += (sender, args) => button.BackColor = Color.PeachPuff;
-            button.MouseEnter += (sender, args) => button.BackColor = Color.PeachPuff;
+            button.GotFocus += (_, _) => button.BackColor = Color.PeachPuff;
+            button.MouseEnter += (_, _) => button.BackColor = Color.PeachPuff;
 
-            button.LostFocus += (sender, args) => button.BackColor = Color.Bisque;
-            button.MouseLeave += (sender, args) => button.BackColor = Color.Bisque;
+            button.LostFocus += (_, _) => button.BackColor = Color.Bisque;
+            button.MouseLeave += (_, _) => button.BackColor = Color.Bisque;
 
             button.Click += action;
 
@@ -42,7 +42,7 @@ namespace Formulas_Generator.Menu.Controls.Builders
 
             public void update()
             {
-                this.Text = LanguageManager.getString(special_ru, special_en);
+                Text = LanguageManager.getString(special_ru, special_en);
             }
         }
     }

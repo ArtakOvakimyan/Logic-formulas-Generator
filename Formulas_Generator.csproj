@@ -62,6 +62,7 @@
         <Compile Include="Math\Structure\Priority.cs" />
         <Compile Include="Math\Structure\Val.cs" />
         <Compile Include="Menu\Controls\Builders\ButtonCreator.cs" />
+        <Compile Include="Menu\Controls\Builders\CheckBoxCreator.cs" />
         <Compile Include="Menu\Controls\Builders\LabelCreator.cs" />
         <Compile Include="Menu\Controls\Builders\MenuStripBuilder.cs" />
         <Compile Include="Menu\Controls\Builders\NumericCreator.cs" />
@@ -69,6 +70,8 @@
         <Compile Include="Menu\Controls\Builders\TextBoxCreator.cs" />
         <Compile Include="Menu\Controls\Stores\ActionsStore.cs" />
         <Compile Include="Menu\Controls\Stores\ButtonsStore.cs" />
+        <Compile Include="Menu\Controls\Stores\CheckBoxStore.cs" />
+        <Compile Include="Menu\Controls\Stores\CheckForm.cs" />
         <Compile Include="Menu\Controls\Stores\LabelsStore.cs" />
         <Compile Include="Menu\Controls\Stores\NumericStore.cs" />
         <Compile Include="Menu\Controls\Stores\StripItemsStore.cs" />

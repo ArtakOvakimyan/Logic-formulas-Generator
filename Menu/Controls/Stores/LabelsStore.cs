@@ -7,13 +7,13 @@ namespace Formulas_Generator.Menu.Controls.Stores
     {
         private static LabelCreator creator = new LabelCreator();
 
-        internal static Control varLabel = creator.createControl(
+        internal static Label varLabel = creator.createControl(
             "Количество доступных литералов:", 
             "Variables avilable number:");
-        internal static Control formulaLabel = creator.createControl(
+        internal static Label formulaLabel = creator.createControl(
             "Количество формул:", 
             "Formulas number:");
-        internal static Control lenLabel = creator.createControl(
+        internal static Label lenLabel = creator.createControl(
             "Длина каждой формулы:", 
             "Formula length:");
     }

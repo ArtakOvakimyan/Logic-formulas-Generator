@@ -7,13 +7,13 @@ namespace Formulas_Generator.Menu.Controls.Stores
     {
         private static NumericCreator creator = new NumericCreator();
         
-        internal static Control varNum = creator.createControl(
+        internal static NumericUpDown varNum = creator.createControl(
             "Variables number",
             null);
-        internal static Control formulaNum = creator.createControl(
+        internal static NumericUpDown formulaNum = creator.createControl(
             "Formula number",
             null);
-        internal static Control formulaLen = creator.createControl(
+        internal static NumericUpDown formulaLen = creator.createControl(
             "Formula length",
             null);
     }

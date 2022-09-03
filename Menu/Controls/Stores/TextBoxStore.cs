@@ -7,6 +7,6 @@ namespace Formulas_Generator.Menu.Controls.Stores
     public static class TextBoxStore
     {
         private static TextBoxCreator creator = new TextBoxCreator();
-        internal static Control box1 = creator.createControl(pathToWrite, null);
+        internal static TextBox box1 = creator.createControl(pathToWrite, null);
     }
 }

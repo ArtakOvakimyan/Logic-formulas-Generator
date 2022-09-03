@@ -1,10 +1,9 @@
 namespace Formulas_Generator.Math.Structure
 {
-    public class And: CustomStruct
+    public class And : CustomStruct
     {
-        private CustomStruct v1;
-        private CustomStruct v2;
-        
+       
+
         public And(CustomStruct v1, CustomStruct v2)
         {
             this.v1 = v1;
@@ -14,48 +13,58 @@ namespace Formulas_Generator.Math.Structure
         public override int LastIndex
         {
             get => System.Math.Max(v1.LastIndex, v2.LastIndex);
-            set{}
+            set { }
         }
-        
+
         public override int Len
         {
             get => 1 + v1.Len + v2.Len;
-            set{}
+            set { }
         }
-        
-        public override Priority Priority {
+
+        public override Priority Priority
+        {
             get => Priority.And;
-            set {}
+            set { }
         }
 
         public override string Operator
         {
-            get => @"\wedge";
-            set{} 
+            get => @"\wedge ";
+            set { }
         }
 
         public override string ToString()
         {
-            /*if (v1.GetType() == typeof(Or) && v2.GetType() == typeof(Or))
+            var v1Str = v1.ToString().Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
+            var v2Str = v2.ToString().Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
+            var res = "";
+
+            foreach (var p1 in v1Str)
             {
-                return "(" + v1.ToString() + ")" + @"\wedge" + "(" + v2.ToString() + ")";
+                foreach (var p2 in v2Str)
+                {
+                    if (v1.Priority < this.Priority)
+                    {
+                        res += "(" + p1 + ")" + this.Operator + p2 + '\n';
+                    }
+
+                    if (v2.Priority < this.Priority)
+                    {
+                        res += p1 + this.Operator + "(" + p2 + ")" + '\n';
+                    }
+
+                    if (v1.Priority < this.Priority && v2.Priority < this.Priority)
+                    {
+                        res += "(" + p1 + ")" + this.Operator + "(" + p2 + ")" + '\n';
+                    }
+                    res += p1 + this.Operator + p2 + '\n';
+                }
             }
 
-            if (v1.GetType() == typeof(Or))
-            {
-                return "(" + v1.ToString() + ")" + @"\wedge" + v2.ToString();
-            }
-            
-            if (v2.GetType() == typeof(Or))
-            {
-                return v1.ToString() + @"\wedge" + "(" + v2.ToString() + ")";
-            }
+            return res;
 
-            return v1.ToString() + @"\wedge" + v2.ToString();*/
-
-            var v1Str = v1.ToString();
-            var v2Str = v2.ToString();
-
+            /*
             if (v1.Priority < this.Priority)
             {
                 v1Str = "(" + v1Str + ")";
@@ -66,7 +75,7 @@ namespace Formulas_Generator.Math.Structure
                 v2Str = "(" + v2Str + ")";
             }
 
-            return v1Str + this.Operator + v2Str;
+            return v1Str + this.Operator + v2Str;*/
         }
     }
 }

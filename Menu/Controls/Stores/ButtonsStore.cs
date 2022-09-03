@@ -1,4 +1,3 @@
-using System.Threading;
 using System.Windows.Forms;
 using Formulas_Generator.Math;
 using Formulas_Generator.Menu.Controls.Builders;
@@ -12,20 +11,20 @@ namespace Formulas_Generator.Menu.Controls.Stores
     {
         private static ButtonCreator creator = new ButtonCreator();
 
-        internal static Control directoryButton = creator.createControl(
+        internal static Button directoryButton = creator.createControl(
             "Выбрать директорию",
             "Choose directory",
-            (s, e) =>
+            (_, _) =>
             {
                 if (MainForm.folderBrowserDialog1.ShowDialog(MainForm.ActiveForm) == DialogResult.OK)
                 {
                     box1.Text = MainForm.folderBrowserDialog1.SelectedPath + sep + fileName;
                 }
             });
-        internal static Control exitButton = creator.createControl(
+        internal static Button exitButton = creator.createControl(
             "Обработать",
             "Handle",
-            (s, e) =>
+            (_, _) =>
             {
                 var generator = new Generator(
                     int.Parse(NumericStore.formulaLen.Text),

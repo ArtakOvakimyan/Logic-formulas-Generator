@@ -26,7 +26,7 @@ namespace Formulas_Generator.Math.Structure
 
         public override string ToString()
         {
-            return " " + value + " ";
+            return value;
         }
     }
 }

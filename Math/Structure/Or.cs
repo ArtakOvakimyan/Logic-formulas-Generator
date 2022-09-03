@@ -2,9 +2,7 @@ namespace Formulas_Generator.Math.Structure
 {
     public class Or: CustomStruct
     {
-        private CustomStruct v1;
-        private CustomStruct v2;
-        
+
         public Or(CustomStruct v1, CustomStruct v2)
         {
             this.v1 = v1;
@@ -29,30 +27,42 @@ namespace Formulas_Generator.Math.Structure
         
         public override string Operator
         {
-            get => @"\vee";
+            get => @"\vee ";
             set{} 
         }
         
         public override string ToString()
         {
-            /*if (v1.GetType() == typeof(And) && v2.GetType() == typeof(And))
+            var v1Str = v1.ToString().Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
+            var v2Str = v2.ToString().Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
+            var res = "";
+
+            foreach (var p1 in v1Str)
             {
-                return "(" + v1.ToString() + ")" + @"\vee" + "(" + v2.ToString() + ")";
+                foreach (var p2 in v2Str)
+                {
+                    if (v1.Priority < this.Priority)
+                    {
+                        res += "(" + p1 + ")" + this.Operator + p2 + '\n';
+                    }
+
+                    if (v2.Priority < this.Priority)
+                    {
+                        res += p1 + this.Operator + "(" + p2 + ")" + '\n';
+                    }
+
+                    if (v1.Priority < this.Priority && v2.Priority < this.Priority)
+                    {
+                        res += "(" + p1 + ")" + this.Operator + "(" + p2 + ")" + '\n';
+                    }
+                    
+                    res += p1 + this.Operator + p2 + '\n';
+                }
             }
 
-            if (v1.GetType() == typeof(And))
-            {
-                return "(" + v1.ToString() + ")" + @"\vee" + v2.ToString();
-            }
+            return res;
             
-            if (v2.GetType() == typeof(And))
-            {
-                return v1.ToString() + @"\vee" + "(" + v2.ToString() + ")";
-            }
-
-            return v1.ToString() + @"\vee" + v2.ToString();*/
-            
-            var v1Str = v1.ToString();
+            /*var v1Str = v1.ToString();
             var v2Str = v2.ToString();
 
             if (v1.Priority < this.Priority)
@@ -65,7 +75,7 @@ namespace Formulas_Generator.Math.Structure
                 v2Str = "(" + v2Str + ")";
             }
 
-            return v1Str + this.Operator + v2Str;
+            return v1Str + this.Operator + v2Str;*/
         }
     }
 }

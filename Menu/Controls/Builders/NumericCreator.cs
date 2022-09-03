@@ -14,7 +14,7 @@ namespace Formulas_Generator.Menu.Controls.Builders
                 Anchor = AnchorStyles.Right,
                 Value = 1,
                 Minimum = 1,
-                
+                Maximum = int.MaxValue,
                 Font = new Font("Bodoni MT", 12),
             };
             return numericUpDown;

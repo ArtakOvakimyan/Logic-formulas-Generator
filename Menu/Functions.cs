@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using Formulas_Generator.Math;
 using Formulas_Generator.SysSupplies;
@@ -25,6 +26,25 @@ namespace Formulas_Generator.Menu
                     fileWriter.WriteLine(texEnd);
                 }
             }
+        }
+
+        public static string formatString(this string s)
+        {
+            StringBuilder sb = new StringBuilder();
+            var j = 0;
+            for (var i = 0; i < s.Length; i++)
+            {
+                if (s[i] == 'x')
+                {
+                    sb.AppendFormat("x{0}", j % 3);
+                    j ++;
+                }
+                else
+                {
+                    sb.Append(s[i]);
+                }
+            }
+            return sb.ToString();
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Formulas_Generator.Menu.Controls.Builders
             optionsItem.DropDownItems.Add(exitItem);
             
             strip.Items.Add(optionsItem);
+            strip.Items.Add(operationsItem);
             strip.Items.Add(helpItem);
 
         }

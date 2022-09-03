@@ -30,7 +30,7 @@ namespace Formulas_Generator.Menu.Controls.Builders
 
             public void update()
             {
-                this.Text = LanguageManager.getString(special_ru, special_en);
+                Text = LanguageManager.getString(special_ru, special_en);
             }
         }
     }

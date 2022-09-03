@@ -31,6 +31,11 @@ namespace Formulas_Generator.Menu.Controls.Stores
         internal static ToolStripMenuItem languageItem = creator.createControl(
             "Смена языка",
             "Change language",
-            (s, e) => LanguageManager.switchLang());
+            switchLang);
+        
+        internal static ToolStripMenuItem operationsItem = creator.createControl(
+            "Выбор связок",
+            "Chose operations",
+            chooseOperations);
     }
 }

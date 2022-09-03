@@ -1,22 +1,23 @@
+using System;
+
 namespace Formulas_Generator.Math.Structure
 {
     public class Not: CustomStruct
     {
-        private CustomStruct v;
 
         public Not(CustomStruct v)
         {
-            this.v = v;
+            this.v1 = v;
         }
         
         public override int LastIndex
         {
-            get => v.LastIndex;
+            get => v1.LastIndex;
             set{}
         }
         public override int Len
         {
-            get => 1 + v.Len;
+            get => 1 + v1.Len;
             set{}
         }
         
@@ -27,17 +28,26 @@ namespace Formulas_Generator.Math.Structure
         
         public override string Operator
         {
-            get => @"\neg";
+            get => @"\neg ";
             set{} 
         }
 
         public override string ToString()
         {
-            if (v.GetType() == typeof(Val))
+            if (v1.GetType() == typeof(Val))
             {
-                return this.Operator + v.ToString() + " ";
+                return this.Operator + v1.ToString();
             }
-            return this.Operator + "(" + v.ToString() + ")" + " ";
+
+            var vstr = v1.ToString().Split(new char[] {'\n'}, StringSplitOptions.RemoveEmptyEntries);
+            var res = "";
+
+            foreach (var p in vstr)
+            {
+                res += this.Operator + "(" + p + ")" + '\n';
+            }
+
+            return res;
         }
     }
 }

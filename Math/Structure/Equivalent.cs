@@ -2,8 +2,7 @@ namespace Formulas_Generator.Math.Structure
 {
     public class Equivalent: CustomStruct
     {
-        private CustomStruct v1;
-        private CustomStruct v2;
+   
         
         public Equivalent(CustomStruct v1, CustomStruct v2)
         {
@@ -30,13 +29,40 @@ namespace Formulas_Generator.Math.Structure
         
         public override string Operator
         {
-            get => @"\leftrightarrow";
+            get => @"\leftrightarrow ";
             set{} 
         }
         
         public override string ToString()
         {
-            return v1.ToString() + this.Operator + v2.ToString();
+            var v1Str = v1.ToString().Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
+            var v2Str = v2.ToString().Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
+            var res = "";
+
+            foreach (var p1 in v1Str)
+            {
+                foreach (var p2 in v2Str)
+                {
+                    if (v1.Priority < this.Priority)
+                    {
+                        res += "(" + p1 + ")" + this.Operator + p2 + '\n';
+                    }
+
+                    if (v2.Priority < this.Priority)
+                    {
+                        res += p1 + this.Operator + "(" + p2 + ")" + '\n';
+                    }
+
+                    if (v1.Priority < this.Priority && v2.Priority < this.Priority)
+                    {
+                        res += "(" + p1 + ")" + this.Operator + "(" + p2 + ")" + '\n';
+                    }
+                    res += p1 + this.Operator + p2 + '\n';
+                }
+            }
+
+            return res;
+            /*return v1.ToString() + this.Operator + v2.ToString();*/
         }
     }
 }
